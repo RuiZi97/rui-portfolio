@@ -159,6 +159,29 @@
         </button>
       </div>
     </section>
+    <!-- CONVERTISSEUR -->
+    <section class="converter-section">
+      <h2>Convertisseur de température</h2>
+
+      <div class="converter-form">
+        <input
+          type="number"
+          id="conv-input"
+          placeholder="Valeur à convertir"
+        >
+
+        <select id="conv-type">
+          <option value="c-to-f">Celsius → Fahrenheit</option>
+          <option value="f-to-c">Fahrenheit → Celsius</option>
+        </select>
+
+        <button class="btn primary" id="conv-btn">Convertir</button>
+      </div>
+
+      <p class="converter-output">
+        Résultat : <span id="conv-result">---</span>
+      </p>
+    </section>
 
 
   </main>

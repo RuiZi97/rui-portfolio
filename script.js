@@ -268,3 +268,34 @@ if (themeToggleBtn) {
     }
   });
 }
+// ---------- CONVERTISSEUR TEMPERATURE ----------
+const convInput = document.getElementById("conv-input");
+const convType = document.getElementById("conv-type");
+const convBtn = document.getElementById("conv-btn");
+const convResultSpan = document.getElementById("conv-result");
+
+if (convInput && convType && convBtn && convResultSpan) {
+  convBtn.addEventListener("click", () => {
+    const value = parseFloat(convInput.value);
+
+    if (isNaN(value)) {
+      convResultSpan.textContent = "Veuillez entrer un nombre.";
+      return;
+    }
+
+    let result;
+    let unit;
+
+    if (convType.value === "c-to-f") {
+      // C → F
+      result = value * 9 / 5 + 32;
+      unit = "°F";
+    } else {
+      // F → C
+      result = (value - 32) * 5 / 9;
+      unit = "°C";
+    }
+
+    convResultSpan.textContent = result.toFixed(1) + " " + unit;
+  });
+}
