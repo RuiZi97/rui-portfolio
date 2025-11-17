@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rui Lima - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="logo">Rui.dev</div>
+
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="portfolio.html" class="nav-link active">Portfolio</a>
+      <a href="apropos.html" class="nav-link">À propos / CV</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <button id="theme-toggle" class="btn secondary small-btn">
+      Mode clair
+    </button>
+
+  </div>
+</header>
+
+
+  <main>
+
+    <section class="portfolio-section">
+      <h1>Mes projets</h1>
+      <p class="portfolio-intro">
+        Voici quelques projets d'entraînement que je réalise pour progresser en développement web.
+      </p>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h2>Carte de visite en ligne</h2>
+          <p>
+            Une carte de visite numérique avec thème clair/sombre,
+            formulaire de contact, compteur, mini-calculatrice et petit jeu JavaScript.
+          </p>
+          <p class="project-tech">HTML • CSS • JavaScript</p>
+        </article>
+
+        <article class="project-card">
+          <h2>Mini calculatrice</h2>
+          <p>
+            Petit outil permettant de faire des opérations simples (addition, soustraction,
+            multiplication, division) directement dans le navigateur.
+          </p>
+          <p class="project-tech">HTML • CSS • JavaScript</p>
+        </article>
+
+        <article class="project-card">
+          <h2>Jeu : Pile ou Face</h2>
+          <p>
+            Un jeu simple pour s'entraîner avec les événements, le hasard et la logique conditionnelle
+            en JavaScript.
+          </p>
+          <p class="project-tech">JavaScript (Math.random, DOM)</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

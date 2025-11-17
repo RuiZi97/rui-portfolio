@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rui Lima - Accueil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="logo">Rui.dev</div>
+
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link active">Accueil</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="apropos.html" class="nav-link">À propos / CV</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <button id="theme-toggle" class="btn secondary small-btn">
+      Mode clair
+    </button>
+
+  </div>
+</header>
+
+
+  <main>
+
+    <!-- le reste de ta page (carte, contact, compteur, etc.) -->
+
+
+    <!-- Carte de visite simple -->
+    <article class="card">
+      <header class="card-header">
+        <div class="avatar">
+          <img src="foto.jpg" alt="Photo de Rui Lima" class="avatar-img">
+        </div>
+
+        <h1>Rui Lima</h1>
+        <p class="subtitle">Motivé à changer d'emploi • Apprenant développement web</p>
+      </header>
+
+      <section class="card-content">
+        <p class="description">
+          Actuellement en reconversion, je me forme au développement web et je progresse chaque jour.
+          Je suis motivé, sérieux, et ouvert à de nouvelles opportunités.
+        </p>
+
+        <ul class="info">
+          <li><strong>Email :</strong> <a href="mailto:rapruisinho@gmail.com">rapruisinho@gmail.com</a></li>
+          <li><strong>Téléphone :</strong> <a href="tel:+352691221934">+352 691 22 19 34</a></li>
+        <a class="btn secondary" href="portfolio.html">Voir mes projets</a>
+        </ul>
+      </section>
+    </article>
+
+    <!-- Formulaire de contact -->
+    <section id="contact" class="contact-section">
+      <h2>Me contacter</h2>
+
+      <p id="form-message" class="form-message"></p>
+
+      <form id="contact-form" action="mailto:rapruisinho@gmail.com" method="post" enctype="text/plain">
+        <div class="form-field">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required minlength="2">
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="vous@example.com" required>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Votre message..." required minlength="5"></textarea>
+        </div>
+
+        <button type="submit" class="btn primary">Envoyer</button>
+      </form>
+    </section>
+
+    <!-- Compteur -->
+    <section class="counter-section">
+      <h2>Petit compteur (JS)</h2>
+      <p>Clics : <span id="click-count">0</span></p>
+      <button id="count-btn" class="btn secondary">Clique sur moi</button>
+    </section>
+
+    <!-- Mini calculatrice -->
+    <section class="calculator-section">
+      <h2>Mini Calculatrice</h2>
+
+      <div class="calculator">
+        <input type="number" id="num1" placeholder="Nombre 1">
+        <input type="number" id="num2" placeholder="Nombre 2">
+
+        <div class="calc-buttons">
+          <button class="btn secondary" id="add">+</button>
+          <button class="btn secondary" id="sub">-</button>
+          <button class="btn secondary" id="mul">×</button>
+          <button class="btn secondary" id="div">÷</button>
+        </div>
+
+        <p class="calc-result">Résultat : <span id="result">---</span></p>
+      </div>
+    </section>
+        <!-- Jeu : Pile ou Face -->
+    <section class="game-section">
+      <h2>Jeu : Pile ou Face</h2>
+
+      <p>Choisis ton côté et lance la pièce :</p>
+
+      <div class="game-controls">
+        <button class="btn secondary" id="choose-pile">Je choisis Pile</button>
+        <button class="btn secondary" id="choose-face">Je choisis Face</button>
+      </div>
+
+      <div class="game-status">
+        <p>Ton choix : <span id="user-choice">---</span></p>
+        <p>Résultat du lancer : <span id="coin-result">---</span></p>
+        <p id="game-message">Clique sur un bouton pour jouer.</p>
+      </div>
+
+      <button class="btn primary" id="play-coin">Lancer la pièce</button>
+    </section>
+        <!-- TODO LIST -->
+    <section class="todo-section">
+      <h2>Ma TODO List</h2>
+
+      <div class="todo-add">
+        <input type="text" id="todo-input" placeholder="Ajouter une tâche…">
+        <button class="btn primary" id="todo-add-btn">Ajouter</button>
+      </div>
+
+      <ul class="todo-list" id="todo-list">
+        <!-- Les tâches apparaîtront ici -->
+      </ul>
+    </section>
+    <!-- QUIZ INTERACTIF -->
+    <section class="quiz-section">
+      <h2>Quiz JavaScript</h2>
+
+      <div id="quiz-content">
+        <p id="quiz-question">Question ici…</p>
+
+        <div id="quiz-answers">
+          <!-- Les boutons de réponses seront ajoutés en JS -->
+        </div>
+
+        <p id="quiz-feedback"></p>
+
+        <button class="btn primary" id="quiz-next" style="display:none;">
+          Question suivante
+        </button>
+      </div>
+    </section>
+
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1028 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* ---------- PALETTE MODERNE ---------- */
+:root {
+  --bg-dark: #0f172a;
+  --bg-card-dark: rgba(15, 23, 42, 0.6);
+  --border-dark: rgba(148, 163, 184, 0.2);
+  --text-dark: #f8fafc;
+
+  --bg-light: #f8fafc;
+  --bg-card-light: rgba(255, 255, 255, 0.7);
+  --border-light: rgba(0, 0, 0, 0.08);
+  --text-light: #0f172a;
+
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  --radius: 22px;
+}
+
+/* Fond sombre par défaut */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: var(--text-dark);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body.light {
+  background: linear-gradient(145deg, #e2e8f0, #f8fafc);
+  color: var(--text-light);
+}
+
+/* ---------- HEADER / NAV ---------- */
+.site-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.header-inner {
+  max-width: 720px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  opacity: 1;
+}
+
+main {
+  margin-top: 20px;
+}
+
+/* Barre du haut */
+.top-bar {
+  max-width: 720px;
+  width: 90%;
+  margin: 0 auto 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+/* ---------- HEADER / NAV ---------- */
+.site-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.header-inner {
+  max-width: 720px;
+  width: 92%;
+  padding: 12px 18px;
+  background: var(--bg-card-dark);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+}
+
+body.light .header-inner {
+  background: var(--bg-card-light);
+  border-color: var(--border-light);
+}
+
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  opacity: 1;
+  color: #60a5fa;               /* bleu clair */
+  border-bottom: 2px solid #60a5fa;
+  padding-bottom: 2px;
+}
+
+
+/* Mode clair : on n’a rien à changer, on garde color: inherit */
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: #e5e7eb;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #e5e7eb;
+  border: 1px solid #4b5563;
+}
+
+.btn:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+
+.small-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* Carte + sections */
+.card,
+.contact-section,
+.counter-section,
+.calculator-section {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 720px;
+  width: 90%;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  margin: 0 auto 16px;
+}
+
+/* Carte */
+.card {
+  display: flex;
+  gap: 20px;
+}
+
+.card-header {
+  flex: 0 0 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid rgba(55, 65, 81, 0.6);
+  padding-right: 16px;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #3b82f6;
+  margin-bottom: 10px;
+  box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.avatar:hover {
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.9);
+  transform: translateY(-2px);
+}
+
+.avatar:hover {
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.9);
+}
+
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+/* Infos */
+.info {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.info li {
+  margin-bottom: 4px;
+}
+
+.info a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+/* Formulaire */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.form-field label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.form-message {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #16a34a;
+  display: none;
+}
+
+/* Compteur */
+.counter-section h2,
+.calculator-section h2 {
+  margin-bottom: 8px;
+}
+
+/* Calculatrice */
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calculator input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.calc-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.calc-result {
+  margin-top: 8px;
+}
+
+/* MODE CLAIR */
+body.light .card,
+body.light .contact-section,
+body.light .counter-section,
+body.light .calculator-section,
+body.light .game-section,
+body.light .todo-section,
+body.light .quiz-section,
+body.light .about-section,
+body.light .portfolio-section {
+  background: var(--bg-card-light);
+  border-color: var(--border-light);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Animation d'apparition vers le haut */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* On applique l'animation à chaque bloc principal */
+.card,
+.contact-section,
+.counter-section,
+.calculator-section {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* On décale un peu les suivantes pour un effet "cascade" */
+.contact-section {
+  animation-delay: 0.1s;
+}
+
+.counter-section {
+  animation-delay: 0.2s;
+}
+
+.calculator-section {
+  animation-delay: 0.3s;
+}
+.game-section {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 720px;
+  width: 90%;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  margin: 0 auto 16px;
+}
+
+.game-section h2 {
+  margin-bottom: 8px;
+}
+
+.game-controls {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.game-status p {
+  margin: 4px 0;
+}
+
+/* Mode clair adapté */
+body.light .game-section {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+/* PAGE PORTFOLIO */
+.portfolio-section {
+  max-width: 720px;
+  width: 90%;
+  margin: 0 auto 20px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+body.light .portfolio-section {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.portfolio-section h1 {
+  margin-bottom: 8px;
+}
+
+.portfolio-intro {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+body.light .portfolio-intro {
+  color: #4b5563;
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(55, 65, 81, 0.8);
+}
+
+body.light .project-card {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.project-card h2 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.project-card p {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.project-tech {
+  font-size: 12px;
+  color: #93c5fd;
+}
+/* RESPONSIVE MOBILE */
+/* ---------- RESPONSIVE MOBILE ---------- */
+@media (max-width: 640px) {
+  body {
+    align-items: stretch;
+  }
+
+  .site-header {
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .header-inner {
+    max-width: 100%;
+    width: 94%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .small-btn {
+    align-self: flex-end;
+  }
+
+  main {
+    margin-top: 4px;
+  }
+
+  /* Carte en colonne */
+  .card {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .card-header {
+    border-right: none;
+    padding-right: 0;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-content {
+    text-align: left;
+  }
+
+  /* Formulaire, compteur, calculatrice, jeu, todo, quiz, about, portfolio :
+     déjà en colonne, on réduit juste un peu les tailles */
+  .contact-section,
+  .counter-section,
+  .calculator-section,
+  .game-section,
+  .todo-section,
+  .quiz-section,
+  .about-section,
+  .portfolio-section {
+    width: 94%;
+    padding: 16px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .todo-add {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-add input {
+    width: 100%;
+  }
+
+  .calc-buttons,
+  .game-controls {
+    flex-wrap: wrap;
+  }
+
+  .about-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .projects-grid {
+    gap: 10px;
+  }
+}
+
+/* ---------- TODO LIST ---------- */
+.todo-section {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 720px;
+  width: 90%;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  margin: 0 auto 16px;
+}
+
+body.light .todo-section {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.todo-add {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.todo-add input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.light .todo-add input {
+  background: #f9fafb;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+.todo-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.todo-item {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.light .todo-item {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-delete {
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* ---------- QUIZ ---------- */
+.quiz-section {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 720px;
+  width: 90%;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  margin: 0 auto 16px;
+}
+
+body.light .quiz-section {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+#quiz-question {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#quiz-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.quiz-answer {
+  background: #1e293b;
+  color: #e5e7eb;
+  border: 1px solid #4b5563;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.quiz-answer:hover {
+  background: #334155;
+}
+
+body.light .quiz-answer {
+  background: #f3f4f6;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+#quiz-feedback {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+/* ---------- PAGE A PROPOS / CV ---------- */
+.about-section {
+  max-width: 720px;
+  width: 90%;
+  margin: 0 auto 20px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+body.light .about-section {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.about-section h1 {
+  margin-bottom: 10px;
+}
+
+.about-intro {
+  font-size: 14px;
+  margin-bottom: 14px;
+  color: #d1d5db;
+}
+
+body.light .about-intro {
+  color: #4b5563;
+}
+
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.about-block {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  margin-bottom: 10px;
+}
+
+body.light .about-block {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.about-block h2 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.about-block p,
+.about-block li {
+  font-size: 14px;
+}
+
+.about-list {
+  margin-left: 16px;
+  margin-top: 4px;
+}
+
+.about-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+/* ---------- RESPONSIVE MOBILE ---------- */
+@media (max-width: 640px) {
+  body {
+    align-items: stretch;
+  }
+
+  .site-header {
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .header-inner {
+    max-width: 100%;
+    width: 94%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .small-btn {
+    align-self: flex-end;
+  }
+
+  main {
+    margin-top: 4px;
+  }
+
+  /* Carte en colonne */
+  .card {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .card-header {
+    border-right: none;
+    padding-right: 0;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-content {
+    text-align: left;
+  }
+
+  /* Formulaire, compteur, calculatrice, jeu, todo, quiz, about, portfolio :
+     déjà en colonne, on réduit juste un peu les tailles */
+  .contact-section,
+  .counter-section,
+  .calculator-section,
+  .game-section,
+  .todo-section,
+  .quiz-section,
+  .about-section,
+  .portfolio-section {
+    width: 94%;
+    padding: 16px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .todo-add {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-add input {
+    width: 100%;
+  }
+
+  .calc-buttons,
+  .game-controls {
+    flex-wrap: wrap;
+  }
+
+  .about-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .projects-grid {
+    gap: 10px;
+  }
+}
+.btn {
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn.primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn.primary:hover {
+  transform: scale(1.05);
+  background: #60a5fa;
+}
+
+.btn.secondary {
+  background: #334155;
+  color: white;
+}
+
+body.light .btn.secondary {
+  background: #e5e7eb;
+  color: #1e293b;
+}
+
+.btn.secondary:hover {
+  transform: scale(1.05);
+}
+/* ---------- ANIMATIONS D'APPARITION ---------- */
+@keyframes fadeInUpSoft {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card,
+.contact-section,
+.counter-section,
+.calculator-section,
+.game-section,
+.todo-section,
+.quiz-section,
+.about-section,
+.portfolio-section {
+  opacity: 0;
+  animation: fadeInUpSoft 0.7s ease-out forwards;
+}
+
+/* petit décalage pour effet "cascade" */
+.contact-section { animation-delay: 0.05s; }
+.counter-section { animation-delay: 0.1s; }
+.calculator-section { animation-delay: 0.15s; }
+.game-section { animation-delay: 0.2s; }
+.todo-section { animation-delay: 0.25s; }
+.quiz-section { animation-delay: 0.3s; }
+.about-section { animation-delay: 0.35s; }
+.portfolio-section { animation-delay: 0.4s; }
+.card,
+.contact-section,
+.counter-section,
+.calculator-section,
+.game-section,
+.todo-section,
+.quiz-section,
+.about-section,
+.portfolio-section {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover,
+.contact-section:hover,
+.counter-section:hover,
+.calculator-section:hover,
+.game-section:hover,
+.todo-section:hover,
+.quiz-section:hover,
+.about-section:hover,
+.portfolio-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
+  border-color: rgba(148, 163, 184, 0.45);
+}
+a {
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.info a,
+.about-section a,
+.portfolio-section a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.info a:hover,
+.about-section a:hover,
+.portfolio-section a:hover {
+  color: #93c5fd;
+  border-bottom-color: #93c5fd;
+}
+.nav-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  border-bottom-color: rgba(148, 163, 184, 0.6);
+}
+
+.nav-link.active {
+  font-weight: bold;
+  opacity: 1;
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
+}
